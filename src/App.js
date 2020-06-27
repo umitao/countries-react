@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
+import CountryCard from "./components/CountryCard";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -27,18 +28,7 @@ function App() {
     return (
       <div className="App">
         <Header modeSetter={setIsDark} mode={isDark} />
-        <div className="container">
-          <div className="row">
-            {countries.map((country) => (
-              <div className="card col-3" key={country.numericCode}>
-                <img src={country.flag} alt="#" className="card-img-top" />
-                <p>{country.name}</p>
-                <p>{country.population}</p>
-                <p>{country.capital}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        <CountryCard data={countries} />
       </div>
     );
 }

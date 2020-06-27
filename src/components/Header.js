@@ -1,7 +1,6 @@
 import React from "react";
 
 const Header = (props) => {
-  console.log(props.mode);
   return (
     <div className="header">
       <h2>Where in the World?</h2>
